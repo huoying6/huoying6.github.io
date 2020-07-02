@@ -1,11 +1,11 @@
 
 @font-face {
     font-family: "FZYHJW";
-    src: url("https://mopanda.gitee.io/css/FZYHJW.eot");
-    src: url("https://mopanda.gitee.io/css/FZYHJW.eot?#ie/*fix") format("embedded-opentype"),
-    url("https://mopanda.gitee.io/css/FZYHJW.woff") format("woff"),
-    url("https://mopanda.gitee.io/css/FZYHJW.ttf") format("truetype")/*,
-    url("https://mopanda.gitee.io/css/FZYHJW.svg#FZYHJW") format("svg")*/;
+    src: url("FZYHJW.eot");
+    src: url("FZYHJW.eot?#ie/*fix") format("embedded-opentype"),
+    url("FZYHJW.woff") format("woff"),
+    url("FZYHJW.ttf") format("truetype")/*,
+    url("FZYHJW.svg#FZYHJW") format("svg")*/;
     font-style: normal;
     font-weight: normal;
 }
