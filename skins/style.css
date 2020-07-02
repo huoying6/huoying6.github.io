@@ -1,7 +1,7 @@
 
 @font-face {
     font-family: "FZYHJW";
-    src: url("../skins/FZYHJW.eot");
+    src: url("skins/FZYHJW.eot");
     src: url("FZYHJW.eot?#ie/*fix") format("embedded-opentype"),
     url("FZYHJW.woff") format("woff"),
     url("FZYHJW.ttf") format("truetype")/*,
