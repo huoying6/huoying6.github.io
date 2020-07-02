@@ -2,9 +2,9 @@
 @font-face {
     font-family: "FZYHJW";
     src: url("../skins/FZYHJW.eot");
-    src: url("../skins/FZYHJW.eot?#ie/*fix") format("embedded-opentype"),
-    url("../skins/FZYHJW.woff") format("woff"),
-    url("../skins/FZYHJW.ttf") format("truetype")/*,
+    src: url("FZYHJW.eot?#ie/*fix") format("embedded-opentype"),
+    url("FZYHJW.woff") format("woff"),
+    url("FZYHJW.ttf") format("truetype")/*,
     url("FZYHJW.svg#FZYHJW") format("svg")*/;
     font-style: normal;
     font-weight: normal;
