@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<!-- saved from url=(0025) -->
+<html class="gray0" style="font-size: 100px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		
+		<link rel="icon" type="image/png" href="images/juanzhou_gaoji.png">
+		<title>高级招募模拟器------火影忍者手游</title>
+		<meta name="description" content="火影忍者手游高级招募模拟器">
+		<meta name="keywords" content="火影忍者手游高级招募模拟器">
+		<meta itemprop="image" content="images/juanzhou_gaoji.png">
+		<meta name="author" content="君临天下">
+		<meta http-equiv="pragma" content="no-cache">
+		<meta http-equiv="cache-control" content="no-cache">
+		<meta http-equiv="expires" content="0">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<meta name="format-detection" content="telephone=no, email=no">
+		<script src="skins/hm.js"></script><script type="text/javascript" src="skins/jquery1.111.min.js"></script>
+		<script type="text/javascript" src="skins/fastclick.js"></script>
+		<link rel="stylesheet" type="text/css" href="skins/animate.min.css">
+		<!-- <link rel="stylesheet" type="text/css" href="css/style.css?v=2019022802"> -->
+		<script>
+		    document.write('<link rel="stylesheet" type="text/css" href="css/style.css?v='+Math.random()+'"/>');
+		</script><link rel="stylesheet" type="text/css" href="skins/style.css">
+		<!-- <script type="text/javascript" src="js/preload.js?v=111603"></script> -->
+		<script type="text/javascript">
+		    document.write('<script type="text/javascript" src="js/preload.js?v='+Math.random()+'"><\/script>');
+		</script><script type="text/javascript" src="skins/preload.js"></script>
+	</head>
+
+	<body style="width: 1920px; height: 913px; transform: none; transform-origin: 50% 50%;">
+
+	<embed src="audio/open2.mp3" width="0" height="0"></embed>
+	
+	
+		<style type="text/css" id="ninjacss"></style>
+<div id="LoadingBar" style="display: none;">
+    <div class="div txt-c">
+        <div class="load-container load8">
+            <div class="loader">Loading</div>
+        </div>
+        <p>准备就绪</p>
+        <span id="cantwaiting"></span>
+    </div>
+</div>
+
+<div class="loadingbarbox" style="display: none;"><div class="loadingline" style="width: 100%;"></div><p><span class="loading-num">100%</span></p></div>
+<div class="loading-logs" style="display:none; position:fixed; left:0; bottom:0; color:#fff; z-index:30000; font-size: .1rem; font-family: &#39;微软雅黑&#39;,&#39;Arial&#39;;"></div>
+    <!--[if lt IE 9]>
+      <div class="browser-tips">我已经不支持远古时代的浏览器了，快快升级吧！</div>
+      <style>
+        .browser-tips{ position:fixed; top:0; left:0; right:0; bottom:0;text-align:center;font-size:20px; line-height:30px; color:#fff; background-color:#000; padding-top:300px; z-index:999999999; }
+      </sytle>
+    <![endif]-->
+<!-- 图像预加载 -->
+<script>
+// loading
+	!(function(){
+		var imgPath = 'images/',
+			sourceArr = ['shareImage.png','a.png','b.png','back.png','baoxiang.png','baoxiang_big.png','baoxiang_big_01.png','baoxiang_big_02.png','baoxiang_big_03.png','baoxiang_big_04.png','baoxiang_big_01_open.png','baoxiang_big_02_open.png','baoxiang_big_03_open.png','baoxiang_big_04_open.png','bg.png','bg_shu.png','biaoqing.png','btn_bg.png','c.png','charactors.png','checkbox_off.png','checkbox_on.png','close.png','coin.png','dot_red.png','feed.png','front.png','guide_bg.png','info.png','juanzhou_gaoji.png','juanzhou_putong.png','juanzhou_xianding.png','loading.png','loading_bg.png','loading_new.png','ninja.png','ninja_active.png','notice.png','piece_bg.png','piece_bg_default.png','piece_fg.png','piece_fg_default.png','pop_big_bg.png','pop_small_bg.png','pop_smalllong_bg.png','pop_smalllong_bg_h.png','resultlist_bg.png','resultlist_bg2.png','s.png','setting.png','setninja.png','shoufujiangli_bg.png','tab_bg_active.png','tips_bg.png','tishi_01.png','tishi_10.png','title_bg.png','title_info.png','title_notice.png','title_setting.png','title_shoufujiangli.png','v.png','yanwu.png','gongzhonghao_erweima.jpg',];
+		loading();
+		function loading(){
+			for (var i = 0; i < sourceArr.length; i++) {
+				sourceArr[i] = imgPath + sourceArr[i];
+			}
+			var loadImage = function(path, callback) {
+				var img = new Image();
+				img.onload = function() {
+					img.onload = null;
+					callback(path);
+				}
+				img.src = path;
+			}
+			var imgLoader = function(imgs, callback) {
+				var len = imgs.length,
+					i = 0;
+				while (imgs.length) {
+					loadImage(imgs.shift(), function(path) {
+						callback(path, ++i, len);
+					});
+				}
+			}
+			imgLoader(sourceArr, function(path, curNum, total) {
+				var percent = curNum / total;
+				//console.log(path);
+				//console.log(percent);
+				//$('.loading-logs').append("<p>"+path+"</p>");
+				//$('.loading-current span').text(path);
+				$('.loading-num').text(Math.floor(percent * 100)+'%');
+				$('.loadingbarbox .loadingline').css({width:Math.floor(percent * 100)+'%'});
+				if (percent == 1) {
+					//$('#loading').addClass('hide').removeClass('show');
+					//$('.loading-current').text(" ");
+                    clearInterval(changeloadingtext);
+                    setTimeout(function(){
+                        $("#LoadingBar p").html("还差一点");
+                    },500)
+                    setTimeout(function(){
+						if($("#LoadingBar").is(":visible")){
+							$("#LoadingBar p").html("服务器几乎睡着了……");
+						}	
+					},20000)
+                    window.onload = function(){
+                        console.log("页面完全加载完成");
+                        setTimeout(function(){
+                            $("#LoadingBar p").html("准备就绪");
+                        },500)
+                        setTimeout(function(){
+                            $("#LoadingBar").fadeOut(300);
+                            $(".loadingbarbox").fadeOut(300);
+                        },1000)//5000                      
+						//指引的浮现
+						setTimeout(function(){
+							$(".guide_wrap").addClass("animated");
+							$(".guide_wrap").show();
+						},1000)
+						setTimeout(function(){
+							$(".guide_wrap").fadeOut(500);
+						},8000)
+                    }
+				}
+			});
+		}
+	})();
+</script>
+<!-- loading 结束 -->
+		<!-- <script type="text/javascript">
+			window.onload=function(){
+				setTimeout(function(){
+					$("#LoadingBar p").html("准备就绪");
+				},3000)
+				setTimeout(function(){
+					$("#LoadingBar").fadeOut(300);
+				},5000)//5000
+			}
+		</script> -->
+
+
+<!-- 版本 -->
+		<div class="copyright"><p><a href="#" title="高级招募模拟器">高级招募模拟器v1.0</a></p></div>
+<!-- main -->
+		<div class="box">
+			<div class="tishi">
+				<img class="tishi_01" src="./skins/tishi_01.png" alt="成功购买1个幻彩石赠送招募忍者碎片">
+				<img class="tishi_10" src="./skins/tishi_10.png" alt="成功购买10个幻彩石赠送招募忍者碎片">
+			</div>
+			<div class="resultlist_wrap">
+				<div class="resultlist">
+					<p style="font-size: .26rem;padding-top:.9rem;">自我安慰，请勿当真</p>
+				</div>
+			</div>
+			<div class="btns">
+				<div class="btn ease1" id="reset" title="重置">重置</div>
+				<div class="btn ease1" id="clik" title="单抽"><i class="icon icon_gaozhaoquan">1</i><span class="txt">招募1次</span></div>
+				<div class="btn ease1" id="clik10" title="十连"><i class="icon icon_gaozhaoquan">10</i><span class="txt">招募10次</span></div>
+                <div class="tips_bisong" id="tips_bisong"></div>
+			</div>
+		</div>
+<!-- 底部幸运值 -->
+		<div class="luckystars_warp"><span>幸运值</span><div class="luckystars"></div></div>
+<!-- 欧皇模式开启中 -->
+		<div class="lucky_mode_text">欧皇模式已开启</div>
+<!-- 隐藏机制开启中 -->
+		<div class="yincangjizhi_text">隐藏机制已开启</div>
+<!-- 统计数据 -->
+		<div class="tongjilist_wrap ease3 on">
+			<div class="tongjilist">
+				<div class="mb20">
+					<dl class="mb10">
+						<dt><i class="icon icon_gaozhaoquan"></i></dt>
+						<dd><p>招募次数</p><p id="cishu">0</p></dd>
+					</dl>
+					<dl class="mb10">
+						<dt><i class="icon icon_jinbi"></i></dt>
+						<dd><p>消耗金币</p><p id="cishujinbi">0</p></dd>
+					</dl>
+				</div>
+				<!--<p class="mb10">累计获得</p>-->
+                <p class="mb20" id="for_new_s"><em class="icon icon_s_new"><em class="img"></em><em class="fg"></em></em> × <span id="num_a_new">0</span></p>
+                <p class="mb20" id="for_new_a"><em class="icon icon_s_new"><em class="img"></em><em class="fg"></em></em> × <span id="num_s_new">0</span></p>
+				<p class="mb10"><i class="icon icon_s"></i>碎片：<span id="num_s">0</span></p>
+				<p class="mb10"><i class="icon icon_a"></i>碎片：<span id="num_a">0</span></p>
+				<p class="mb10"><i class="icon icon_b"></i>碎片：<span id="num_b">0</span></p>
+				<p class="mb10"><i class="icon icon_c"></i>碎片：<span id="num_c">0</span></p>
+			</div>
+		</div>
+		<div class="tongjilist_btns on">
+			<div class="btn btn_back ease3"><i class="icon icon_back"></i><span class="txt">收起</span></div>
+			<div class="btn btn_front ease3"><span class="txt">碎片统计</span><i class="icon icon_front"></i></div>
+		</div>
+        
+<!-- 右上角图标容器 第1列 -->
+		<div class="thebtns thebtns_01">
+        	<div class="btn btn_notice ease1"><i class="icon icon_notice"></i><span class="txt">公告</span></div>
+<!--        	<div class="btn btn_info ease1"><i class="icon icon_info"></i><span class="txt">关于</span></div>-->
+            <div class="btn btn_setting ease1"><i class="icon icon_setting"></i><span class="txt">设置</span></div>
+            <div class="btn btn_baoxiang ease1 animated tada infinite"><i class="icon icon_baoxiang"></i><span class="txt">S首付奖励</span></div>
+			<div class="btn btn_baoxiang_a ease1 animated tada infinite"><i class="icon icon_baoxiang"></i><span class="txt">A首付奖励</span></div>
+        </div>
+<!-- 右上角图标容器 第2列 -->
+        <!--<div class="thebtns thebtns_02">
+        	<a class="btn ease1" href="https://mopanda.gitee.io/fengyin.html"><i class="icon icon_fengyinbaoxiang"></i><span class="txt">封印</span></a>
+            <a href="https://mopanda.gitee.io/ninjashare.html" class="btn btn_ninja ease1"><i class="icon icon_ninja"></i><span class="txt">图图</span><!-- <i class="icon icon_dot_red"></i> --></a>
+         	
+           <!-- <a href="headshot.html" class="btn btn_ninja ease1"><i class="icon icon_touxiangkuang"></i><span class="txt">头像</span></a> -->
+        	<!-- <a class="btn btn_feed ease1" href="https://www.wjx.cn/jq/27221880.aspx" target="_blank"><i class="icon icon_feed"></i></a> -->
+        </div>-->
+<!-- 弹窗遮罩 -->
+<div class="pop_mask"></div>
+<!-- 重要通知 -->
+		<div class="pop pop_big pop_notice animated zoomIn">
+			<div class="title"><img class="title_bg" src="./skins/title_bg.png" alt=""><img class="title_txt" src="./skins/title_notice.png" alt="公告"></div>
+			<div class="text_wrap">
+				<div class="text_body">
+					<p><font color="#e94130"></font><font color="#6bd675"></font><!-- <i class="biaoqing biaoqing_07"></i> --></p>
+					<p><font color="#e94130">&gt;&gt;&gt;&gt;本次更新</font></p>
+					<p>1、更新纲手[百豪]。</p>
+                    
+					
+					
+					<a target="_blank" href="//shang.qq.com/wpa/qunwpa?idkey=a1cf659ef157845494bf0afbaf1e8f40021ac869254369c61ba26ce5f386a8d9"><img border="0" src="//pub.idqqimg.com/wpa/images/group.png" alt="火影忍者手游" title="火影忍者手游"></a>
+					
+					
+					
+					
+					
+					<p style="text-align: right;">君临天下</p>
+					<p style="text-align: right;">2020年6月29日</p>
+					
+				</div>
+			</div>
+			<div class="btn btn_close ease1"><i class="icon icon_close"></i></div>
+		</div>
+
+<!-- 关于弹窗 -->
+		<!--<div class="pop pop_big pop_info animated zoomIn">
+			<div class="title"><img class="title_bg" src="./skins/title_bg.png" alt=""><img class="title_txt" src="./skins/title_info.png" alt="信息"></div>
+			<div class="text_wrap">
+				<div class="text_body">
+					<p>关于高级招募模拟器</p>
+					<p><br></p>
+					<p>1、本程序没有切换10次出整卡功能，玄学操作是个谜，可用于鉴定欧皇和非酋。</p>
+					<p>2、本程序参照官方概率数据，如下：<font color="#e94130">3.5%</font>概率出现S级忍者碎片，<font color="#e94130">11.5%</font>出现A级忍者碎片，<font color="#e94130">40%</font>出现B级忍者碎片，<font color="#e94130">45%</font>概率出现C级忍者碎片。</p>
+					<p>3、至于出现的是哪位忍者碎片以及出现的碎片数量，因没有官方数据参考，则按均分概率处理。</p>
+					<p>4、素材源于腾讯《火影忍者手游》，非官方出品，仅供娱乐，请勿当真！</p>
+					<p>最后祝大家学习进步、工作顺利、身体健康、游戏愉快~<i class="biaoqing biaoqing_01"></i></p>
+					<p><br></p>
+					<p><br></p>
+					<p style="text-align: right;">君临天下</p>
+					<p><br></p>
+					<div class="btns"><a href="#" class="btn ease1" title="微博" target="_blank"><i class="icon icon_sina"></i>QQ群</a><a href="javascript:void(0);" class="btn ease1 jump_gzh" title="公众号"><i class="icon icon_weixin"></i>我是公众号</a></div>
+					<div style="display:none;">
+						<script async src="./skins/busuanzi.pure.mini.js"></script>
+			        </div>
+				</div>
+			</div>
+			<div class="btn btn_close ease1"><i class="icon icon_close"></i></div>
+		</div>-->
+<!-- 设置弹窗 -->
+		<div class="pop pop_big pop_setting animated zoomIn">
+			<div class="title"><img class="title_bg" src="./skins/title_bg.png" alt=""><img class="title_txt" src="./skins/title_setting.png" alt="设置"></div>
+			<div class="text_wrap">
+				<div class="text_body">
+                    <!--左-->
+                    <div class="part_l">
+	                    <div class="btn btn_switch btn_bisong ease1 on" style="display: none;">
+	                        <i class="icon icon_checkbox"></i><span class="txt">10次必送S碎片(默认开启)</span>
+	                    </div>
+	                    <div class="btn btn_switch btn_sad ease1" style="display: none;">
+	                        <i class="icon icon_checkbox"></i><span class="txt">脸黑反馈</span>
+	                    </div>
+	                    <div>
+		                    <div class="btn btn_switch btn_shoufu_s ease1" style="line-height: .3rem;">
+		                        <i class="icon icon_checkbox"></i><span class="txt">S首付奖励</span><span class="subtxt">招募达到100次时出现</span>
+		                    </div>
+		                </div>
+		                <div>
+		                    <div class="btn btn_switch btn_shoufu_a ease1 on" style="line-height: .3rem;">
+		                        <i class="icon icon_checkbox"></i><span class="txt">A首付奖励</span><span class="subtxt">招募达到50次时出现</span>
+		                    </div>
+		                </div>
+		                <div>
+		                    <div class="btn btn_switch btn_yincangjizhi ease1" style="line-height: .3rem;">
+		                        <i class="icon icon_checkbox"></i><span class="txt">隐藏机制</span><span class="subtxt">50抽至少出一组S，40抽至少出一组A</span>
+		                    </div>
+		                </div>
+		                <div>
+		                    <div class="btn btn_switch btn_luckystar ease1 disabled" style="line-height: .3rem;">
+		                        <i class="icon icon_checkbox"></i><span class="txt">欧皇模式</span><span class="subtxt">非常无聊的功能</span>
+		                    </div>
+	                    </div>
+                	</div>
+                	<div class="part_r">
+	                    <div>
+	                    	<div class="btn btn_switch btn_audio ease1 on">
+		                        <i class="icon icon_checkbox"></i><span class="txt">音效</span>
+		                    </div>
+		             <!--  <div class="btn btn_switch btn_bgm ease1 on">
+		                        <i class="icon icon_checkbox"></i><span class="txt">音乐</span>
+		                    </div>!-->
+	                    </div>
+	                    <div class="btns">
+	                    	<div id="btn_setninja" class="btn btn_setninja ease1" title="选择忍者"><i class="icon icon_setninja"></i><span class="txt">选择忍者</span></div>
+	                    </div>
+                	</div>
+				</div>
+			</div>
+			<div class="btn btn_close ease1"><i class="icon icon_close"></i></div>
+		</div>
+<!-- 忍者配置弹窗 -->
+		<div class="pop pop_setninja animated zoomIn">
+			<div class="text_wrap">
+				<div class="tabbox">
+					<ul class="tabbox_hd">
+						<li class="tabbox_hd_item active">S级忍者</li>
+						<li class="tabbox_hd_item">A级忍者</li>
+					</ul>
+					<div class="tabbox_bd">
+						<div class="tabbox_bd_item tabbox_bd_item_s active">
+							<ul class="ninjalist">
+								<li class="item_wrap btn ease1 active" data-x="-15.10rem" data-y="0" data-name="纲手[百豪]">
+									<div class="item">
+										<div class="img" style="background-position:-15.10rem 0;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+                                
+                                								<li class="item_wrap btn ease1" data-x="-13.68rem" data-y="0" data-name="波风水门[秽土转生]">
+									<div class="item">
+										<div class="img" style="background-position:-13.68rem 0;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+                                
+                                
+								<li class="item_wrap btn ease1" data-x="-11.52rem" data-y="0" data-name="猿飞日斩[秽土转生]">
+									<div class="item">
+										<div class="img" style="background-position:-11.52rem 0;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+								<li class="item_wrap btn ease1" data-x="-10.8rem" data-y="0" data-name="长门[秽土转生]">
+									<div class="item">
+										<div class="img" style="background-position:-10.8rem 0;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+								<li class="item_wrap btn ease1" data-x="-5.76rem" data-y="0" data-name="宇智波斑">
+									<div class="item">
+										<div class="img" style="background-position:-5.76rem 0;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+								<li class="item_wrap btn ease1" data-x="-5.04rem" data-y="0" data-name="千手柱间">
+									<div class="item">
+										<div class="img" style="background-position:-5.04rem 0;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+								<li class="item_wrap btn ease1" data-x="-4.32rem" data-y="0" data-name="艾[四代目雷影]">
+									<div class="item">
+										<div class="img" style="background-position:-4.32rem 0;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+								<li class="item_wrap btn ease1" data-x="-1.44rem" data-y="0" data-name="千手扉间">
+									<div class="item">
+										<div class="img" style="background-position:-1.44rem 0;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+								<li class="item_wrap btn ease1" data-x="-7.92rem" data-y="0" data-name="神秘面具男">
+									<div class="item">
+										<div class="img" style="background-position:-7.92rem 0;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+								<li class="item_wrap btn ease1" data-x="-8.64rem" data-y="0" data-name="宇智波鼬[须佐能乎]">
+									<div class="item">
+										<div class="img" style="background-position:-8.64rem 0;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+								<li class="item_wrap btn ease1" data-x="0" data-y="0" data-name="佩恩[天道]">
+									<div class="item">
+										<div class="img" style="background-position:0 0;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+								<li class="item_wrap btn ease1" data-x="-6.48rem" data-y="0" data-name="波风水门">
+									<div class="item">
+										<div class="img" style="background-position:-6.48rem 0;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+								<li class="item_wrap btn ease1" data-x="-7.2rem" data-y="0" data-name="大蛇丸">
+									<div class="item">
+										<div class="img" style="background-position:-7.2rem 0;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+								<li class="item_wrap btn ease1" data-x="-2.16rem" data-y="0" data-name="自来也">
+									<div class="item">
+										<div class="img" style="background-position:-2.16rem 0;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="tabbox_bd_item tabbox_bd_item_a">
+							<ul class="ninjalist">
+								<li class="item_wrap btn ease1 active" data-x="-28.08rem" data-y="-.72rem" data-name="药师兜[半蛇斗篷]">
+									<div class="item">
+										<div class="img" style="background-position:-28.08rem -.72rem;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+								<li class="item_wrap btn ease1" data-x="-25.20rem" data-y="-.72rem" data-name="我爱罗[忍界大战]">
+									<div class="item">
+										<div class="img" style="background-position:-25.20rem -.72rem;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+								<li class="item_wrap btn ease1" data-x="-23.04rem" data-y="-.72rem" data-name="大蛇丸[晓]">
+									<div class="item">
+										<div class="img" style="background-position:-23.04rem -.72rem;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+								<li class="item_wrap btn ease1" data-x="-20.88rem" data-y="-.72rem" data-name="春野樱[百豪]">
+									<div class="item">
+										<div class="img" style="background-position:-20.88rem -.72rem;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+								<li class="item_wrap btn ease1" data-x="-4.32rem" data-y="-.72rem" data-name="照美冥[五代目水影]">
+									<div class="item">
+										<div class="img" style="background-position:-4.32rem -.72rem;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+								<li class="item_wrap btn ease1" data-x="-2.88rem" data-y="-.72rem" data-name="宇智波佐助[万花筒写轮眼]">
+									<div class="item">
+										<div class="img" style="background-position:-2.88rem -.72rem;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+								<li class="item_wrap btn ease1" data-x="-.72rem" data-y="-.72rem" data-name="奇拉比">
+									<div class="item">
+										<div class="img" style="background-position:-.72rem -.72rem;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+								<li class="item_wrap btn ease1" data-x="-12.96rem" data-y="-.72rem" data-name="漩涡鸣人[仙人模式]">
+									<div class="item">
+										<div class="img" style="background-position:-12.96rem -.72rem;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+								<li class="item_wrap btn ease1" data-x="-15.12rem" data-y="-.72rem" data-name="旗木卡卡西[万花筒写轮眼]">
+									<div class="item">
+										<div class="img" style="background-position:-15.12rem -.72rem;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+								<li class="item_wrap btn ease1" data-x="-14.4rem" data-y="-.72rem" data-name="宇智波止水">
+									<div class="item">
+										<div class="img" style="background-position:-14.4rem -.72rem;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+								<li class="item_wrap btn ease1" data-x="-12.24rem" data-y="-.72rem" data-name="小南">
+									<div class="item">
+										<div class="img" style="background-position:-12.24rem -.72rem;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+								<li class="item_wrap btn ease1" data-x="-8.64rem" data-y="-.72rem" data-name="迪达拉">
+									<div class="item">
+										<div class="img" style="background-position:-8.64rem -.72rem;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+								<li class="item_wrap btn ease1" data-x="-6.48rem" data-y="-.72rem" data-name="宇智波鼬">
+									<div class="item">
+										<div class="img" style="background-position:-6.48rem -.72rem;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+								<li class="item_wrap btn ease1" data-x="-5.76rem" data-y="-.72rem" data-name="迈特凯">
+									<div class="item">
+										<div class="img" style="background-position:-5.76rem -.72rem;"></div>
+										<div class="fg"></div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="btns"><div class="btn btn_done ease1" title="完成">完成</div></div>
+				<div class="hints_setninja">配置忍者会重置招募次数</div>
+			</div>
+			<div class="btn btn_close ease1"><i class="icon icon_close"></i></div>
+		</div>
+
+<!-- 首付S奖励 -->
+        <div class="pop pop_big pop_baoxiang animated zoomIn">
+			<div class="title"><img class="title_bg" src="./skins/title_bg.png" alt=""><img class="title_txt" src="./skins/title_shoufujiangli.png" alt="首付奖励"></div>
+			<div class="text_wrap">
+            	<div class="text_body">
+					<p>请根据自己的V等级领取相应的奖励</p>
+					<p><br></p>
+                <div class="baoxianglist_wrap">
+                    <div class="baoxianglist">
+                        <div class="item btn ease1" id="baoxiang01">
+                        	<div class="pic">
+                            	<img src="./skins/baoxiang_big_01.png" class="img" alt="宝箱V0-V4领取">
+                            	<img src="./skins/baoxiang_big_01_open.png" class="img_open" alt="宝箱V0-V4领取">
+                            </div>
+                            <div class="txt">v0-v4领取<br><font style="color:#ee1a1a;">(S级碎片×25)</font></div>
+                        </div>
+                        <div class="item btn ease1" id="baoxiang02">
+                            <div class="pic">
+                                <img src="./skins/baoxiang_big_02.png" class="img" alt="宝箱V5-V9领取">
+                                <img src="./skins/baoxiang_big_02_open.png" class="img_open" alt="宝箱V5-V9领取">
+                            </div>
+                            <div class="txt">v5-v9领取<br><font style="color:#ee1a1a;">(S级碎片×28)</font></div>
+                        </div>
+                        <div class="item btn ease1" id="baoxiang03">
+                            <div class="pic">
+                                <img src="./skins/baoxiang_big_03.png" class="img" alt="宝箱V10-V14领取">
+                                <img src="./skins/baoxiang_big_03_open.png" class="img_open" alt="宝箱V10-V14领取">
+                            </div>
+                            <div class="txt">v10-v14领取<br><font style="color:#ee1a1a;">(S级碎片×33)</font></div>
+                        </div>
+                        <div class="item btn ease1" id="baoxiang04">
+                            <div class="pic">
+                                <img src="./skins/baoxiang_big_04.png" class="img" alt="宝箱V15领取">
+                                <img src="./skins/baoxiang_big_04_open.png" class="img_open" alt="宝箱V15领取">
+                            </div>
+                            <div class="txt">v15领取<br><font style="color:#ee1a1a;">(S级碎片×38)</font></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+			<div class="btn btn_close ease1"><i class="icon icon_close"></i></div>
+        </div>
+<!-- 首付A奖励 -->
+        <div class="pop pop_big pop_baoxiang_a animated zoomIn">
+			<div class="title"><img class="title_bg" src="./skins/title_bg.png" alt=""><img class="title_txt" src="./skins/title_shoufujiangli.png" alt="首付奖励"></div>
+			<div class="text_wrap">
+            	<div class="text_body">
+					<p>请根据自己的V等级领取相应的奖励</p>
+					<p><br></p>
+                <div class="baoxianglist_wrap">
+                    <div class="baoxianglist">
+                        <div class="item btn ease1" id="baoxiang_a01">
+                            <div class="pic">
+                                <img src="./skins/baoxiang_big_01.png" class="img" alt="宝箱V0-V4领取">
+                                <img src="./skins/baoxiang_big_01_open.png" class="img_open" alt="宝箱V0-V4领取">
+                            </div>
+                            <div class="txt">v0-v4领取<br><font style="color:#ee1a1a;">(A级碎片×10)</font></div>
+                        </div>
+                        <div class="item btn ease1" id="baoxiang_a02">
+                            <div class="pic">
+                                <img src="./skins/baoxiang_big_02.png" class="img" alt="宝箱V5-V9领取">
+                                <img src="./skins/baoxiang_big_02_open.png" class="img_open" alt="宝箱V5-V9领取">
+                            </div>
+                            <div class="txt">v5-v9领取<br><font style="color:#ee1a1a;">(A级碎片×11)</font></div>
+                        </div>
+                        <div class="item btn ease1" id="baoxiang_a03">
+                            <div class="pic">
+                                <img src="./skins/baoxiang_big_03.png" class="img" alt="宝箱V10-V14领取">
+                                <img src="./skins/baoxiang_big_03_open.png" class="img_open" alt="宝箱V10-V14领取">
+                            </div>
+                            <div class="txt">v10-v14领取<br><font style="color:#ee1a1a;">(A级碎片×13)</font></div>
+                        </div>
+                        <div class="item btn ease1" id="baoxiang_a04">
+                            <div class="pic">
+                                <img src="./skins/baoxiang_big_04.png" class="img" alt="宝箱V15领取">
+                                <img src="./skins/baoxiang_big_04_open.png" class="img_open" alt="宝箱V15领取">
+                            </div>
+                            <div class="txt">v15领取<br><font style="color:#ee1a1a;">(A级碎片×15)</font></div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+			<div class="btn btn_close ease1"><i class="icon icon_close"></i></div>
+        </div>
+
+<!-- 公众号弹窗 -->
+<!--		<div class="pop pop_gzh animated zoomIn">
+			<div class="text_body"><p></p><img src="./skins/gongzhonghao_erweima.jpg" alt="公众号二维码"></div>
+			<div class="btn btn_close ease1"><i class="icon icon_close"></i></div>
+		</div>-->
+<!-- 新忍者弹窗 -->
+<!--		<div class="pop pop_newninja animated bounceIn">
+			<div class="text_body"><p></p><img src="./skins/90082001_BG.jpg" alt="蛇兜招募图"></div>
+			<div class="btn btn_close ease1"><i class="icon icon_close"></i></div>
+		</div>-->
+
+<!-- 指引 -->
+		 
+<!-- 恭喜 -->
+		<div class="congratulation_wrap"><span class="congratulation" id="congratulation"></span></div>
+<!-- toast -->
+		<div class="toast_wrap"><span class="toast" id="toast"></span></div>
+
+	
+
+<script type="text/javascript" src="skins/howler.core.min.js"></script>
+<script type="text/javascript">
+    document.write('<script type="text/javascript" src="js/custom.js?v='+Math.random()+'"><\/script>');
+</script><script type="text/javascript" src="skins/custom.js"></script>
+
+<!-- 倒计时 -->
+<script type="text/javascript" src="skins/jquery.downCount.js"></script>
+<script type="text/javascript">
+	/** 
+		使用方法
+		依赖dom结构，总容器class为countdown（与调用函数中对应即可）
+		总容器下包含4个容器用于放置天、时、分、秒4个数字，class分别为days、hours、minutes、seconds
+	*/
+    $('.countdown').downCount({
+		date: '01/24/2020 05:00:00',
+		offset: +8
+	}, function () {
+		$("#btn_miling").remove();
+		$(".guide_wrap").remove();
+	});
+</script>
+
+
+
+
+
+</body></html>
