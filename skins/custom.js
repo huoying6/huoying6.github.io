@@ -75,7 +75,7 @@ document.body.addEventListener('touchstart', function () { });
 	// var audioid = 0;
 	// new 一个audioSprite实例，把合成的mp3里面的每段音效起始、持续时间赋值，并初始化好其他的属性。
 	var audioSprite = new Howl({
-	    src: ['https://skins-1251007564.cos.ap-shanghai.myqcloud.com/audio/audiosprite.mp3'],
+	    src: ['https://www.guluyule.xyz/audio/audiosprite.mp3'],
 	    sprite: {
 	        menu_cancel: [0, 1900],
 	        menu_err: [2289, 1965],
@@ -87,7 +87,7 @@ document.body.addEventListener('touchstart', function () { });
 	});
 	// new 一个bgmSprite实例，背景音乐mp3里面的每段音效起始、持续时间赋值，并初始化好其他的属性。
 	var bgmSprite = new Howl({
-	    src: ['https://skins-1251007564.cos.ap-shanghai.myqcloud.com/audio/open2.mp3'],
+	    src: ['https://www.guluyule.xyz/audio/open2.mp3'],
 	    sprite: {
 	        open2: [0, 999999]
 	    },
